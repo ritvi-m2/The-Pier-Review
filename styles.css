@@ -30,7 +30,8 @@ header{
 }
 .site-wrap{ max-width: 1100px; margin: 0 auto; padding: 0 1rem; }
 .brand{ display:flex; align-items:center; gap:0.75rem; padding:0.75rem 0; justify-content:space-between; }
-.logo{ font-family: 'Playfair Display', serif; font-weight:700; color:var(--navy); font-size:1.6rem; text-decoration:none; }
+.logo{ font-family: 'Playfair Display', serif; font-weight:700; color:var(--navy); font-size:1.6rem; text-decoration:none; display:flex; align-items:center; gap:0.5rem; }
+.logo-icon{ height:40px; width:auto; }
 .logo .mark{ display:inline-block; width:34px; height:34px; background:var(--navy); color:white; border-radius:6px; font-size:0.95rem; display:flex; align-items:center; justify-content:center; }
 .nav{ list-style:none; display:flex; gap:1rem; margin:0; padding:0; align-items:center; }
 .nav a{ color:var(--navy); text-decoration:none; font-weight:600; }
@@ -43,7 +44,7 @@ html{ scroll-behavior:smooth; }
 /* Hero */
 .hero{ position:relative; border-radius:12px; color: var(--navy); overflow:hidden; min-height:340px; display:flex; align-items:center; }
 .hero::before{ content:''; position:absolute; inset:0; }
-.hero.hero-with-bg::before{ background-image: linear-gradient(rgba(3,19,34,0.55), rgba(3,19,34,0.4)); }
+.hero.hero-with-bg::before{ background-image: linear-gradient(rgba(3,19,34,0.55), rgba(3,19,34,0.55)); }
 .hero-bg{ position:absolute; inset:0; background-image: url('posts/3/cross%20section%20of%20K-64%20Delta-IV%20class%20SSBN.jpg'); background-size:cover; background-position:center; filter:grayscale(40%) contrast(85%) brightness(65%); }
 .hero.hero-with-bg{ color: white; }
 .hero-inner{ position:relative; z-index:2; padding:2.25rem; display:flex; gap:2rem; align-items:center; }
@@ -52,7 +53,7 @@ html{ scroll-behavior:smooth; }
 .hero p{ margin:0 0 1rem 0; }
 .hero.hero-with-bg p{ color:rgba(255,255,255,0.92); }
 .hero.hero-with-bg h1{ color: #ffffff; }
-.cta-button{ display:inline-block; background:var(--accent); color:white; padding:0.6rem 1rem; border-radius:8px; text-decoration:none; font-weight:700; box-shadow:0 6px 18px rgba(217,130,43,0.16); }
+.cta-button{ display:inline-block; background:var(--accent); color:white; padding:0.6rem 1rem; border-radius:8px; text-decoration:none; font-weight:700; box-shadow:0 6px 18px rgba(217,130,43,0.16); font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
 
 /* Posts Grid */
 .posts-section{ margin-top:1.25rem; }
@@ -75,6 +76,30 @@ html{ scroll-behavior:smooth; }
 
 /* Post content images (inside articles) */
 .post-image { max-width: 100%; height: auto; display: block; margin: 0.75rem auto; border-radius: 6px; }
+
+/* Hidden posts */
+.post-card.hidden { display: none; }
+
+/* Read More button */
+.read-more-btn { 
+	display: block; 
+	margin: 1rem auto 0; 
+	padding: 0.8rem 1.5rem; 
+	background: var(--navy);
+	color: white;
+	border: none;
+	border-radius: 8px;
+	font-weight: 600;
+	cursor: pointer;
+	font-size: 1rem;
+	transition: background 0.2s ease, transform 0.2s ease;
+	font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+.read-more-btn:hover { 
+	background: #003d66;
+	transform: translateY(-2px);
+}
 
 /* Post pages: ensure readable title and content */
 .post-hero{ background:transparent; color:var(--navy); }
