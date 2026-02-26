@@ -27,12 +27,13 @@ header{
   background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.65));
   backdrop-filter: blur(4px);
   border-bottom: 1px solid rgba(30,40,60,0.06);
+  max-height: 80px;
 }
 .site-wrap{ max-width: 1100px; margin: 0 auto; padding: 0 1rem; }
 .brand{ display:flex; align-items:center; gap:0.75rem; padding:0.75rem 0; justify-content:space-between; }
 .logo{ font-family: 'Playfair Display', serif; font-weight:700; color:var(--navy); font-size:1.6rem; text-decoration:none; display:flex; align-items:center; gap:0.5rem; }
-.logo-icon{ height:40px; width:auto; }
-.logo .mark{ display:inline-block; width:34px; height:34px; background:var(--navy); color:white; border-radius:6px; font-size:0.95rem; display:flex; align-items:center; justify-content:center; }
+.logo-icon{ height:40px; width:auto; max-width:100px; object-fit:contain; display:block; }
+.logo .mark{ display:block; width:34px; height:34px; background:var(--navy); color:white; border-radius:6px; font-size:0.95rem; display:flex; align-items:center; justify-content:center; }
 .nav{ list-style:none; display:flex; gap:1rem; margin:0; padding:0; align-items:center; }
 .nav a{ color:var(--navy); text-decoration:none; font-weight:600; }
 
