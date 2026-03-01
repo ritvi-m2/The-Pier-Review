@@ -4,26 +4,56 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Contact — The Pier Review</title>
+    <link rel="icon" href="TPR.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <header>
       <div class="site-wrap">
         <div class="brand">
-          <a class="logo" href="index.html">The Pier Review</a>
+          <a class="logo" href="index.html"><img src="TPR.png" alt="The Pier Review" class="logo-icon"> The Pier Review</a>
           <nav>
             <ul class="nav">
               <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
               <li><a href="contact.html">Contact</a></li>
             </ul>
           </nav>
         </div>
       </div>
     </header>
-    <main>
-      <h1 class="post-title">Contact</h1>
-      <p>Want to contribute or ask a question? Email: info@pierreview.example</p>
+    <main class="site-wrap">
+      <section class="bio">
+        <h1 class="post-title">Contact</h1>
+        <p>Want to ask a question or share an idea? Type your message below.</p>
+        <form>
+          <textarea id="question-box" rows="12" aria-label="Your question" placeholder="Type your question here..."></textarea>
+          <p id="word-count">0 / 200 words</p>
+          <button type="button">Send</button>
+        </form>
+      </section>
     </main>
+
+    <script>
+      const questionBox = document.getElementById('question-box');
+      const wordCount = document.getElementById('word-count');
+      const sendButton = document.querySelector('button[type="button"]');
+      const maxWords = 200;
+
+      questionBox.addEventListener('input', function() {
+        const words = questionBox.value.trim().split(/\s+/).filter(Boolean);
+
+        if (words.length > maxWords) {
+          questionBox.value = words.slice(0, maxWords).join(' ');
+        }
+
+        const currentCount = questionBox.value.trim().split(/\s+/).filter(Boolean).length;
+        wordCount.textContent = `${currentCount} / ${maxWords} words`;
+      });
+
+      sendButton.addEventListener('click', function() {
+        questionBox.value = '';
+        wordCount.textContent = `0 / ${maxWords} words`;
+      });
+    </script>
   </body>
 </html>

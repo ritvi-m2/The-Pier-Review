@@ -69,11 +69,28 @@ html{ scroll-behavior:smooth; }
 
 /* Utility sections */
 .featured, .bio, .newsletter{ background:white; border-radius:10px; padding:1rem; margin-top:1rem; box-shadow:0 6px 16px rgba(12,20,30,0.04); }
-.author{ display:flex; gap:0.75rem; align-items:center; }
-.author img{ width:64px; height:64px; border-radius:8px; object-fit:cover; }
+.author{ display:flex; gap:1rem; align-items:flex-start; }
+.author img{ width:200px; max-width:40%; height:auto; border-radius:8px; object-fit:cover; }
+.author > div{ flex:1; }
 .newsletter form{ display:flex; gap:0.5rem; margin-top:0.5rem; }
 .newsletter input[type=email]{ flex:1; padding:0.6rem; border-radius:8px; border:1px solid #e4e7ea; }
 .newsletter button{ background:var(--navy); color:white; padding:0.6rem 0.9rem; border-radius:8px; border:none; }
+
+#question-box{
+  width:100%;
+  resize:vertical;
+  padding:0.8rem;
+  border-radius:8px;
+  border:2px solid var(--navy);
+  font-family:'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-size:1rem;
+  box-sizing:border-box;
+}
+
+#question-box:focus{
+  outline:none;
+  border-color:var(--accent);
+}
 
 /* Post content images (inside articles) */
 .post-image { max-width: 100%; height: auto; display: block; margin: 0.75rem auto; border-radius: 6px; }
@@ -86,7 +103,7 @@ html{ scroll-behavior:smooth; }
 	display: block; 
 	margin: 1rem auto 0; 
 	padding: 0.8rem 1.5rem; 
-	background: var(--navy);
+  background: var(--accent);
 	color: white;
 	border: none;
 	border-radius: 8px;
@@ -98,7 +115,7 @@ html{ scroll-behavior:smooth; }
 }
 
 .read-more-btn:hover { 
-	background: #003d66;
+  background: var(--accent);
 	transform: translateY(-2px);
 }
 
@@ -114,4 +131,4 @@ html{ scroll-behavior:smooth; }
 /* Headings */
 h1,h2,h3{ color:var(--navy); }
 
-@media (max-width:700px){ .hero{ min-height:260px } .hero h1{ font-size:1.6rem } .brand{ padding:0.5rem 0 } .logo{ font-size:1.25rem } }
+@media (max-width:700px){ .hero{ min-height:260px } .hero h1{ font-size:1.6rem } .brand{ padding:0.5rem 0 } .logo{ font-size:1.25rem } .author img{ width:120px; max-width:45%; } }
